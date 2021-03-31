@@ -47,6 +47,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 * Profile Screen
     * As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
     * As a user, I should be able to change profile picture.
+    * As a user, I should be able to log out.
 * Leaderboard Screen
     * As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
