@@ -11,7 +11,6 @@
 HeroGuessr is an application that allows users to brush up on their superhero knowledge. If they wish, users can also put their matchup knowledge to the test and see how they fare against others on the leaderboards.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Social Networking / Informational / Trivia
 - **Mobile:** Once you click the VS option on the bottom of the screen, it will randomize two superheroes and allow the user to guess which one would win. The user will be able to use their camera to update their profile picture which makes it visually appealing while viewing statistics. The leaderboards would show their statistics and have a filter based off their location (to see nearby top users).
 - **Story:** Users look up various superheroes and compare stats with other heroes. The hero with better stats wins and the user's win/loss record is updated. There is a leaderboard showing the top users on the app. 
