@@ -76,7 +76,6 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 <img src="https://i.imgur.com/Sqeafu3.jpg" width=600>
 
 ## Schema
-<img src='Schema.png' width=600>
 
 ### Models
 
