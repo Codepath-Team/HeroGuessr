@@ -74,11 +74,44 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 ## Wireframes
 
 <img src="https://i.imgur.com/Sqeafu3.jpg" width=600>
-
-## Schema 
-[This section will be completed in Unit 9]
+## Schema
+<img src='Schema.png' width=600>
 ### Models
-[Add table of models]
+#### Hero
+
+| Property         | Type     | Description                          |
+| --------         | -------- | --------                             |
+| heroID           | String   | hero id from api                     |
+| name             | String   | name of the hero                     |
+| imagePath        | String   | url to image of hero                 |
+| status           | String   | says whether hero wins/losses battle or can be blank for search page |
+| intelligence     | String   | intelligence powerstat               |
+| strength         | String   | strength powerstat                   |
+| speed            | String   | speed powerstat                      |
+| durability       | String   | durability powerstat                 |
+| power            | String   | power powerstat                      |
+| combat           | String   | combat powerstat                     |
+| fullName         | String   | hero's real name                     |
+| placeOfBirth     | String   | hero's birthplace                    |
+| firstAppearance  | String   | media that hero first appeared in    |
+| publisher        | String   | company that published this hero     |
+| alignment        | String   | whether character is good/evil       |
+| gender           | String   | hero's gender                        |
+| race             | String   | hero's race (human, kryptonian, ...) |
+| height           | String   | height of hero                       |
+| weight           | String   | weight of hero                       |
+| groupAffiliation | String   | groups hero is a part of             |
+
+#### User
+
+| Property | Type     | Description     |
+| -------- | -------- | --------        |
+| userID   | String   | unique user id  |
+| username | String | user's username |
+| password | String | user's password |
+| profile_pic | String | URL of profile picture |
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
