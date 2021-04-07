@@ -115,6 +115,32 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+#### Login Screen
+   
+   * (POST) Sign up
+```
+user.signUpInBackground(new SignUpCallback() {
+   public void done(ParseException e) {
+      if (e == null) {
+        loginUser(username, password);
+    } else {
+        Log.e("LoginActivity" , "Signup failed" , e);
+    }
+  }
+});                                                  
+```
+
+* (POST) Log in
+```
+ParseUser.logInInBackground(username, password, new LogInCallback() {
+    @Override
+    public void done(ParseUser user, ParseException e) {
+        if (e != null) {
+            Log.e("LoginActivity", "Issue with login", e);
+            return;
+        }
+        goMainActivity();
+    }
+});                                                                                         
+```
