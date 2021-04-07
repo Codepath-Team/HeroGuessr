@@ -75,10 +75,9 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 <img src="https://i.imgur.com/Sqeafu3.jpg" width=600>
 
-## Schema
+## Schema 
 
 ### Models
-
 #### Hero
 
 | Property         | Type     | Description                          |
@@ -86,7 +85,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 | heroID           | String   | hero id from api                     |
 | name             | String   | name of the hero                     |
 | imagePath        | String   | url to image of hero                 |
-| status           | String   | says whether hero wins/losses battle or can be blank for search page |
+| status           | String   | says whether hero wins/losses battle or can be blank for search page                                                |
 | intelligence     | String   | intelligence powerstat               |
 | strength         | String   | strength powerstat                   |
 | speed            | String   | speed powerstat                      |
@@ -110,8 +109,9 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 | -------- | -------- | --------        |
 | userID   | String   | unique user id  |
 | username | String | user's username |
-| password | String | user's password |
 | profile_pic | String | URL of profile picture |
+| wins | int | amount of times the user correctly predicted the winner |
+| winPercentage | double | user percentage of correct predictions |
 
 
 ### Networking
@@ -144,6 +144,7 @@ ParseUser.logInInBackground(username, password, new LogInCallback() {
     }
 });                                                                                         
 ```
+
 #### Matchup and Search screens
 * (GET) Query hero info
 
