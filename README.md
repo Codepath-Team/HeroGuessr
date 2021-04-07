@@ -144,3 +144,18 @@ ParseUser.logInInBackground(username, password, new LogInCallback() {
     }
 });                                                                                         
 ```
+#### Matchup and Search screens
+* (GET) Query hero info
+
+```
+let query = PFQuery(className:info)
+query.whereKey("name", equalTo: DESIREDHERONAME)
+query.findObjectsInBackground { (info: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let info = info {
+      print("Successfully retrieved hero info")
+  // TODO: Do something with hero info...
+   }
+}
+```
