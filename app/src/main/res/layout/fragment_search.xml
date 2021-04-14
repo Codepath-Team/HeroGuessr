@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <EditText
+        android:id="@+id/etHeroSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#DADADA"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:drawablePadding="4dp"
+        android:hint="Search for a Hero"
+        android:inputType="text"
+        android:padding="4dp"
+        android:selectAllOnFocus="true"
+        android:textColor="#000000" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
 
 </FrameLayout>
