@@ -65,6 +65,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         TextView tvPower;
         TextView tvCombat;
         ImageView ivHeroImage;
+        TextView tvPublisher;
+        TextView tvFirstAppearance;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -76,6 +78,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvDurability = itemView.findViewById(R.id.tvDurability);
             tvPower = itemView.findViewById(R.id.tvPower);
             tvCombat = itemView.findViewById(R.id.tvCombat);
+            tvPublisher = itemView.findViewById(R.id.tvPublisher);
+            tvFirstAppearance = itemView.findViewById(R.id.tvFirstAppearance);
         }
 
 
@@ -88,6 +92,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             tvDurability.setText("Durability: " + hero.getDurability());
             tvPower.setText("Power: " + hero.getPower());
             tvCombat.setText("Combat: " + hero.getCombat());
+            tvPublisher.setText("Publisher: " + hero.getPublisher());
+            tvFirstAppearance.setText("First Appearance: " + hero.getFirstAppearance());
             String imageUrl;
             imageUrl = hero.getImageURL();
 

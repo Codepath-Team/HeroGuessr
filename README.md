@@ -40,8 +40,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 * Login
     * [x] As a user, I should be able to log in, sign up, or log out.
 * Hero Information Screen
-    * [ ] As a user, I should be able to search for a hero from the Superhero API database.
-    * [ ] As a user, I should be able to view various info about the heroes I search for.
+    * [x] As a user, I should be able to search for a hero from the Superhero API database.
+    * [x] As a user, I should be able to view various info about the heroes I search for.
 * Matchup Screen
    * [ ] As a user, I should be able to guess who is likely to win in a given matchup.
    * [ ] As a user, I should be able to see who will win based on power stats.
@@ -53,6 +53,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
     * [ ] As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 <img src='https://imgur.com/BMxDkkD.gif' title='Login Authentication Walkthrough' width='' alt='Login Authentication Walkthrough' />
+
+<img src='https://i.imgur.com/8RJl3DV.gif' title='Login Authentication Walkthrough' width='500px' alt='Hero Search Walkthrough' />
 
 
 ### 3. Navigation
