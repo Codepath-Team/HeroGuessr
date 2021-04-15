@@ -50,9 +50,11 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
     * [] As a user, I should be able to change profile picture.
     * [] As a user, I should be able to log out.
 * Leaderboard Screen
-    * []As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
+    * [] As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 Login Authentication:
+
+
       <img src='https://imgur.com/BMxDkkD.gif' title='Login Authentication Walkthrough' width='' alt='Login Authentication Walkthrough' />
 
 
