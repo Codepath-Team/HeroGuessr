@@ -1,13 +1,6 @@
 package com.example.heroguessr.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -15,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,8 +23,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.heroguessr.MainActivity;
 import com.example.heroguessr.R;
-import com.example.heroguessr.models.Hero;
 import com.example.heroguessr.adapters.SearchAdapter;
+import com.example.heroguessr.models.Hero;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,10 +35,10 @@ import java.util.List;
 
 public class SearchFragment extends Fragment {
 
-    private EditText etHeroSearch;
-    private RecyclerView rvSearchResults;
     protected List<Hero> heroes;
     protected SearchAdapter searchAdapter;
+    private EditText etHeroSearch;
+    private RecyclerView rvSearchResults;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -68,12 +67,12 @@ public class SearchFragment extends Fragment {
         etHeroSearch.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                      //Toast.makeText(getContext(), etHeroSearch.getText(), Toast.LENGTH_SHORT).show();
-                      String heroName = etHeroSearch.getText().toString();
-                      searchForHero(heroName);
-                    }
+                    //Toast.makeText(getContext(), etHeroSearch.getText(), Toast.LENGTH_SHORT).show();
+                    String heroName = etHeroSearch.getText().toString();
+                    searchForHero(heroName);
+                }
                 return false;
             }
         });
@@ -96,7 +95,7 @@ public class SearchFragment extends Fragment {
                         Log.i("SearchFrament", "Hero: " + hero.getName() + ", id: " + hero.getHeroID());
                     }
 
-                    } catch (JSONException jsonException) {
+                } catch (JSONException jsonException) {
                     jsonException.printStackTrace();
                 }
             }
