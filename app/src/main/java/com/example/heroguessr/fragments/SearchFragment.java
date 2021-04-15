@@ -16,16 +16,16 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+//import com.android.volley.Request;
+//import com.android.volley.RequestQueue;
+//import com.android.volley.Response;
+//import com.android.volley.VolleyError;
+//import com.android.volley.toolbox.JsonObjectRequest;
+//import com.android.volley.toolbox.Volley;
 import com.example.heroguessr.MainActivity;
 import com.example.heroguessr.R;
 import com.example.heroguessr.models.Hero;
-import com.example.heroguessr.adapters.SearchAdapter;
+//import com.example.heroguessr.adapters.SearchAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

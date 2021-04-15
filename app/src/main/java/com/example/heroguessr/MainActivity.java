@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -34,19 +35,79 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
                     case R.id.action_search:
-                        fragment = new SearchFragment();
+                        //fragment = new SearchFragment();
+                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("search")).commit();
+                        }
+                        else {
+                            fragmentManager.beginTransaction().add(R.id.flContainer, new SearchFragment(), "search").commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
+                        }
                         break;
                     case R.id.action_battle:
-                        fragment = new BattleFragment();
+                        //fragment = new BattleFragment();
+                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("battle")).commit();
+                        }
+                        else {
+                            fragmentManager.beginTransaction().add(R.id.flContainer, new BattleFragment(), "battle").commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
+                        }
                         break;
                     case R.id.action_leaderboard:
-                        fragment = new LeaderboardFragment();
+                        //fragment = new LeaderboardFragment();
+                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("leaderboard")).commit();
+                        }
+                        else {
+                            fragmentManager.beginTransaction().add(R.id.flContainer, new LeaderboardFragment(), "leaderboard").commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
+                        }
                         break;
                     default:
-                        fragment = new ProfileFragment();
+                        //fragment = new ProfileFragment();
+                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("profile")).commit();
+                        }
+                        else {
+                            fragmentManager.beginTransaction().add(R.id.flContainer, new ProfileFragment(), "profile").commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
+                        }
+                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
+                        }
                         break;
                 }
-                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                //fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;
             }
         });
