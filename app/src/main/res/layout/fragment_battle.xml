@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BattleFragment">
-
+    tools:context=".fragments.BattleFragment"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="0.5">
+        android:layout_width="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvHero1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Hero1"
-            android:textSize="20sp" />
+            android:text="Finding opponent..."
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/ivHero1"
@@ -27,30 +30,135 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            tools:src="@tools:sample/avatars" />
-    </LinearLayout>
+            tools:src="@tools:sample/avatars"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
 
-        <TextView
-            android:id="@+id/tvHero2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Hero2"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/tvIntelligence1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Intelligence: ?" />
 
-        <ImageView
-            android:id="@+id/ivHero2"
+            <TextView
+                android:id="@+id/tvStrength1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Strength: ?" />
+
+            <TextView
+                android:id="@+id/tvSpeed1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Speed: ?" />
+
+            <TextView
+                android:id="@+id/tvDurability1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Durability: ?" />
+
+            <TextView
+                android:id="@+id/tvPower1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Power: ?" />
+
+            <TextView
+                android:id="@+id/tvCombat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Combat: ?" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            tools:src="@tools:sample/avatars" />
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvHero2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Finding opponent..."
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/ivHero2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                tools:src="@tools:sample/avatars" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <TextView
+                android:id="@+id/tvIntelligence2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Intelligence: ?" />
+
+            <TextView
+                android:id="@+id/tvStrength2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Strength: ?" />
+
+            <TextView
+                android:id="@+id/tvSpeed2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Speed: ?" />
+
+            <TextView
+                android:id="@+id/tvDurability2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Durability: ?" />
+
+            <TextView
+                android:id="@+id/tvPower2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Power: ?" />
+
+            <TextView
+                android:id="@+id/tvCombat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Combat: ?" />
+        </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnNewBattle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="New Battle" />
 </LinearLayout>
+
