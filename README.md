@@ -54,6 +54,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 <img src='https://imgur.com/BMxDkkD.gif' title='Login Authentication Walkthrough' width='' alt='Login Authentication Walkthrough' />
 
+<img src='https://i.imgur.com/8RJl3DV.gif' title='Login Authentication Walkthrough' width='500px' alt='Hero Search Walkthrough' />
+
 
 ### 3. Navigation
 
