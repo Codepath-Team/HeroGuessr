@@ -24,6 +24,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 **Required Must-have Stories**
  * As a user, I should be able to log in, sign up, and log out.
+   - <img src="https://imgur.com/a/KMrA3zw" width=600>
  * As a user, I should be able to search for a hero from the Superhero API database.
  * As a user, I should be able to view various info about the heroes I search for.
  * As a user, I should be able to play a guessing game based on random matchups.
@@ -38,19 +39,19 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 ### 2. Screen Archetypes
 
 * Login
-    * As a user, I should be able to log in, sign up, or log out.
+    * [x] As a user, I should be able to log in, sign up, or log out.
 * Hero Information Screen
-    * As a user, I should be able to search for a hero from the Superhero API database.
+    * [] As a user, I should be able to search for a hero from the Superhero API database.
      * As a user, I should be able to view various info about the heroes I search for.
 * Matchup Screen
-   *  As a user, I should be able to guess who is likely to win in a given matchup.
-   *  As a user, I should be able to see who will win based on power stats.
+   *  [] As a user, I should be able to guess who is likely to win in a given matchup.
+   *  [] As a user, I should be able to see who will win based on power stats.
 * Profile Screen
-    * As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
-    * As a user, I should be able to change profile picture.
-    * As a user, I should be able to log out.
+    * [] As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
+    * [] As a user, I should be able to change profile picture.
+    * [] As a user, I should be able to log out.
 * Leaderboard Screen
-    * As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
+    * []As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 
 ### 3. Navigation
