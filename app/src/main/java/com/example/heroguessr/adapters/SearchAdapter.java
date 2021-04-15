@@ -18,6 +18,8 @@ import com.example.heroguessr.models.Hero;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private final Context context;
