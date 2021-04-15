@@ -1,8 +1,4 @@
 package com.example.heroguessr.adapters;
-import com.bumptech.glide.request.target.Target;
-import com.example.heroguessr.R;
-import com.bumptech.glide.Glide;
-import com.example.heroguessr.models.Hero;
 
 import android.content.Context;
 import android.util.Log;
@@ -15,13 +11,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+import com.example.heroguessr.R;
+import com.example.heroguessr.models.Hero;
+
 import java.util.List;
+
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
-    private Context context;
-    private List<Hero> heroes;
+    private final Context context;
+    private final List<Hero> heroes;
 
     public SearchAdapter(Context context, List<Hero> heroes) {
         this.context = context;
@@ -97,7 +99,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                     .transform(new RoundedCornersTransformation(radius, margin)).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                     .into(ivHeroImage);
 
-            }
         }
     }
+}
 

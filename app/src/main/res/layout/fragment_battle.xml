@@ -4,72 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BattleFragment"
-    android:orientation="vertical">
+    tools:context=".fragments.BattleFragment">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.5">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvHero1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hero1"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivHero1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvHero1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Finding opponent..."
-                android:textSize="15sp" />
-
-            <ImageView
-                android:id="@+id/ivHero1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                tools:src="@tools:sample/avatars" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvHero2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Finding opponent..."
-                android:textSize="15sp" />
-
-            <ImageView
-                android:id="@+id/ivHero2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                tools:src="@tools:sample/avatars" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            tools:src="@tools:sample/avatars" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnNewBattle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="New Battle" />
+        <TextView
+            android:id="@+id/tvHero2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hero2"
+            android:textSize="20sp" />
 
+        <ImageView
+            android:id="@+id/ivHero2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            tools:src="@tools:sample/avatars" />
+    </LinearLayout>
 
 </LinearLayout>
-

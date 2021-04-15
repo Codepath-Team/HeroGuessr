@@ -1,13 +1,13 @@
 package com.example.heroguessr;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.heroguessr.fragments.BattleFragment;
 import com.example.heroguessr.fragments.LeaderboardFragment;
@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String API = "https://superheroapi.com/api/104590598401309/search/";
     public static final String TAG = "MainActivity";
-    private BottomNavigationView bottomNavigationView;
     final FragmentManager fragmentManager = getSupportFragmentManager();
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

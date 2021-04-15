@@ -3,7 +3,6 @@ package com.example.heroguessr;
 import android.app.Application;
 
 import com.parse.Parse;
-import com.parse.ParseObject;
 
 public class ParseApplication extends Application {
 
