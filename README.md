@@ -40,6 +40,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 * Login
     * [x] As a user, I should be able to log in, sign up, or log out.
+      <img src="https://imgur.com/a/KMrA3zw" width=250><br> (https://imgur.com/a/KMrA3zw)
 * Hero Information Screen
     * [] As a user, I should be able to search for a hero from the Superhero API database.
      * As a user, I should be able to view various info about the heroes I search for.
