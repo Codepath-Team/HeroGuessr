@@ -43,8 +43,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
     * [x] As a user, I should be able to search for a hero from the Superhero API database.
     * [x] As a user, I should be able to view various info about the heroes I search for.
 * Matchup Screen
-   * [ ] As a user, I should be able to guess who is likely to win in a given matchup.
-   * [ ] As a user, I should be able to see who will win based on power stats.
+   * [x] As a user, I should be able to guess who is likely to win in a given matchup.
+   * [x] As a user, I should be able to see who will win based on power stats.
 * Profile Screen
     * [ ] As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
     * [ ] As a user, I should be able to change profile picture.
@@ -56,6 +56,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 <img src='https://i.imgur.com/8RJl3DV.gif' title='Login Authentication Walkthrough' width='500px' alt='Hero Search Walkthrough' />
 
+<img src='https://user-images.githubusercontent.com/65434552/114958012-27e6fb80-9e30-11eb-8e15-1f73a1c83f67.gif' title='Battle Game' width='500px' alt='Battle Game Walkthrough' />
 
 ### 3. Navigation
 
@@ -88,7 +89,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 | --------         | -------- | --------                             |
 | heroID           | String   | hero id from api                     |
 | name             | String   | name of the hero                     |
-| imageURL         | String   | url to image of hero                 |
+| imageURL         | String   | url to image of hero                 |![battle](https://user-images.githubusercontent.com/65434552/114958000-1f8ec080-9e30-11eb-8bee-5c5328bae230.gif)
+
 | intelligence     | String   | intelligence powerstat               |
 | strength         | String   | strength powerstat                   |
 | speed            | String   | speed powerstat                      |
