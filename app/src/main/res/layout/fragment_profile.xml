@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +10,60 @@
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="top|right"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="22dp"
         android:text="Logout" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imProfilePicture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top|left"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        tools:src="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnChangePfp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="157dp"
+        android:text="Change Profile Picture"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="237dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="331dp"
+        android:text="Win/Loss:"
+        android:textSize="45sp" />
+
+    <TextView
+        android:id="@+id/tvStats"
+        android:layout_width="161dp"
+        android:layout_height="46dp"
+        android:layout_below="@+id/tvTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="115dp"
+        android:text="W: 13 L: 5"
+        android:textSize="35sp" />
+
+</RelativeLayout>
