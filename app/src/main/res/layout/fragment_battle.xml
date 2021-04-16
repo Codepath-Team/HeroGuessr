@@ -3,40 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BattleFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragments.BattleFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Who Will Win?"
+        android:textSize="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvHero1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Finding opponent..."
-            android:textSize="15sp" />
-
-        <ImageView
-            android:id="@+id/ivHero1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            tools:src="@tools:sample/avatars"/>
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvHero1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Finding opponent..."
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivHero1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_margin="15dp"
+                tools:src="@tools:sample/avatars" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
+                android:id="@+id/btnHero1Win"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_gravity="center"
+                android:text="Winner" />
 
             <TextView
                 android:id="@+id/tvIntelligence1"
@@ -94,21 +102,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Finding opponent..."
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/ivHero2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_height="180dp"
+                android:layout_margin="15dp"
                 tools:src="@tools:sample/avatars" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:id="@+id/btnHero2Win"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_gravity="center"
+                android:text="Winner" />
 
             <TextView
                 android:id="@+id/tvIntelligence2"
@@ -154,11 +162,28 @@
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Winner is ..."
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/btnNewBattle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="New Battle" />
+
 </LinearLayout>
 
