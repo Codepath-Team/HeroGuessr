@@ -23,14 +23,14 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
- * As a user, I should be able to log in, sign up, and log out.
- * As a user, I should be able to search for a hero from the Superhero API database.
- * As a user, I should be able to view various info about the heroes I search for.
- * As a user, I should be able to play a guessing game based on random matchups.
- * As a user, I should be able to compare heroes' power stats and see who is likely to win in a given matchup.
- * As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
- * As a user, I should be able to change my profile picture.
- * As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
+ - [x] As a user, I should be able to log in, sign up, and log out.
+ - [x] As a user, I should be able to search for a hero from the Superhero API database.
+ - [x] As a user, I should be able to view various info about the heroes I search for.
+ - [x] As a user, I should be able to play a guessing game based on random matchups.
+ - [x] As a user, I should be able to compare heroes' power stats and see who is likely to win in a given matchup.
+ - [ ] As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
+ - [ ] As a user, I should be able to change my profile picture.
+ - [ ] As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 **Optional Nice-to-have Stories**
 * As a user, I should be able to discuss with others in a forum.
@@ -38,19 +38,19 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 ### 2. Screen Archetypes
 
 * Login
-    * [x] As a user, I should be able to log in, sign up, or log out.
+    * As a user, I should be able to log in, sign up, or log out.
 * Hero Information Screen
-    * [x] As a user, I should be able to search for a hero from the Superhero API database.
-    * [x] As a user, I should be able to view various info about the heroes I search for.
+    * As a user, I should be able to search for a hero from the Superhero API database.
+    * As a user, I should be able to view various info about the heroes I search for.
 * Matchup Screen
-   * [x] As a user, I should be able to guess who is likely to win in a given matchup.
-   * [x] As a user, I should be able to see who will win based on power stats.
+   * As a user, I should be able to guess who is likely to win in a given matchup.
+   * As a user, I should be able to see who will win based on power stats.
 * Profile Screen
-    * [ ] As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
-    * [ ] As a user, I should be able to change profile picture.
-    * [ ] As a user, I should be able to log out.
+    * As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
+    * As a user, I should be able to change profile picture.
+    * As a user, I should be able to log out.
 * Leaderboard Screen
-    * [ ] As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
+    * As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 <img src='https://imgur.com/BMxDkkD.gif' title='Login Authentication Walkthrough' width='' alt='Login Authentication Walkthrough' />
 
