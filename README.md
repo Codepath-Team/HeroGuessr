@@ -89,8 +89,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 | --------         | -------- | --------                             |
 | heroID           | String   | hero id from api                     |
 | name             | String   | name of the hero                     |
-| imageURL         | String   | url to image of hero                 |![battle](https://user-images.githubusercontent.com/65434552/114958000-1f8ec080-9e30-11eb-8bee-5c5328bae230.gif)
-
+| imageURL         | String   | url to image of hero                 |
 | intelligence     | String   | intelligence powerstat               |
 | strength         | String   | strength powerstat                   |
 | speed            | String   | speed powerstat                      |
