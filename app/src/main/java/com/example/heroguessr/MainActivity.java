@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.heroguessr.fragments.BattleFragment;
 import com.example.heroguessr.fragments.LeaderboardFragment;
@@ -36,73 +35,69 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.action_search:
                         //fragment = new SearchFragment();
-                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                        if (fragmentManager.findFragmentByTag("search") != null) {
                             fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("search")).commit();
-                        }
-                        else {
+                        } else {
                             fragmentManager.beginTransaction().add(R.id.flContainer, new SearchFragment(), "search").commit();
                         }
-                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                        if (fragmentManager.findFragmentByTag("profile") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                        if (fragmentManager.findFragmentByTag("battle") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                        if (fragmentManager.findFragmentByTag("leaderboard") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
                         }
                         break;
                     case R.id.action_battle:
                         //fragment = new BattleFragment();
-                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                        if (fragmentManager.findFragmentByTag("battle") != null) {
                             fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("battle")).commit();
-                        }
-                        else {
+                        } else {
                             fragmentManager.beginTransaction().add(R.id.flContainer, new BattleFragment(), "battle").commit();
                         }
-                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                        if (fragmentManager.findFragmentByTag("search") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                        if (fragmentManager.findFragmentByTag("profile") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                        if (fragmentManager.findFragmentByTag("leaderboard") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
                         }
                         break;
                     case R.id.action_leaderboard:
                         //fragment = new LeaderboardFragment();
-                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                        if (fragmentManager.findFragmentByTag("leaderboard") != null) {
                             fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("leaderboard")).commit();
-                        }
-                        else {
+                        } else {
                             fragmentManager.beginTransaction().add(R.id.flContainer, new LeaderboardFragment(), "leaderboard").commit();
                         }
-                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                        if (fragmentManager.findFragmentByTag("search") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                        if (fragmentManager.findFragmentByTag("battle") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                        if (fragmentManager.findFragmentByTag("profile") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
                         }
                         break;
                     default:
                         //fragment = new ProfileFragment();
-                        if(fragmentManager.findFragmentByTag("profile")!=null) {
+                        if (fragmentManager.findFragmentByTag("profile") != null) {
                             fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("profile")).commit();
-                        }
-                        else {
+                        } else {
                             fragmentManager.beginTransaction().add(R.id.flContainer, new ProfileFragment(), "profile").commit();
                         }
-                        if(fragmentManager.findFragmentByTag("search")!=null) {
+                        if (fragmentManager.findFragmentByTag("search") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("battle")!=null) {
+                        if (fragmentManager.findFragmentByTag("battle") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("battle")).commit();
                         }
-                        if(fragmentManager.findFragmentByTag("leaderboard")!=null) {
+                        if (fragmentManager.findFragmentByTag("leaderboard") != null) {
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("leaderboard")).commit();
                         }
                         break;

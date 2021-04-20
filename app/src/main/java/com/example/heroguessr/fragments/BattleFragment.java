@@ -1,15 +1,6 @@
 package com.example.heroguessr.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
@@ -26,11 +20,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.heroguessr.R;
 import com.example.heroguessr.models.Hero;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Random;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import okhttp3.Headers;
@@ -167,24 +157,21 @@ public class BattleFragment extends Fragment {
         int pwr2 = Integer.parseInt(power2);
         int cbt2 = Integer.parseInt(combat2);
 
-        int hero1Overall = intel1+str1+spd1+dur1+pwr1+cbt1;
-        int hero2Overall = intel2+str2+spd2+dur2+pwr2+cbt2;
+        int hero1Overall = intel1 + str1 + spd1 + dur1 + pwr1 + cbt1;
+        int hero2Overall = intel2 + str2 + spd2 + dur2 + pwr2 + cbt2;
 
         if (hero1Overall > hero2Overall) {
             tvWinner.setText("Winner is " + hero1Name);
             if (winner == 1) {
                 tvStatus.setText("You were CORRECT");
-            }
-            else {
+            } else {
                 tvStatus.setText("You were INCORRECT");
             }
-        }
-        else {
+        } else {
             tvWinner.setText("Winner is " + hero2Name);
             if (winner == 2) {
                 tvStatus.setText("You were CORRECT");
-            }
-            else {
+            } else {
                 tvStatus.setText("You were INCORRECT");
             }
         }
@@ -246,25 +233,22 @@ public class BattleFragment extends Fragment {
     }
 
     public boolean isThereNull(Hero hero) {
-        if(hero.getIntelligence().equals("null")) {
+        if (hero.getIntelligence().equals("null")) {
             return true;
         }
-        if(hero.getStrength().equals("null")) {
+        if (hero.getStrength().equals("null")) {
             return true;
         }
-        if(hero.getSpeed().equals("null")) {
+        if (hero.getSpeed().equals("null")) {
             return true;
         }
-        if(hero.getDurability().equals("null")) {
+        if (hero.getDurability().equals("null")) {
             return true;
         }
-        if(hero.getPower().equals("null")) {
+        if (hero.getPower().equals("null")) {
             return true;
         }
-        if(hero.getCombat().equals("null")) {
-            return true;
-        }
-        return false;
+        return hero.getCombat().equals("null");
     }
 
     public void getHeroes() {
@@ -273,7 +257,7 @@ public class BattleFragment extends Fragment {
     }
 
     public void getHero1() {
-        randomHero1 = (int)(Math.random()*731+1);
+        randomHero1 = (int) (Math.random() * 731 + 1);
         String heroURL1 = API + randomHero1;
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -282,10 +266,9 @@ public class BattleFragment extends Fragment {
             public void onSuccess(int i, Headers headers, JSON json) {
                 try {
                     Hero hero = new Hero(json.jsonObject);
-                    if(isThereNull(hero)) {
+                    if (isThereNull(hero)) {
                         getHero1();
-                    }
-                    else {
+                    } else {
                         tvHero1.setText(hero.getName());
                         saveHero1Stats(hero);
                         Glide.with(getContext()).load(hero.getImageURL()).into(ivHero1);
@@ -305,7 +288,7 @@ public class BattleFragment extends Fragment {
     }
 
     public void getHero2() {
-        randomHero2 = (int)(Math.random()*731+1);
+        randomHero2 = (int) (Math.random() * 731 + 1);
         String heroURL2 = API + randomHero2;
 
         AsyncHttpClient client2 = new AsyncHttpClient();
@@ -314,10 +297,9 @@ public class BattleFragment extends Fragment {
             public void onSuccess(int i, Headers headers, JSON json) {
                 try {
                     Hero hero = new Hero(json.jsonObject);
-                    if(isThereNull(hero)) {
+                    if (isThereNull(hero)) {
                         getHero2();
-                    }
-                    else {
+                    } else {
                         tvHero2.setText(hero.getName());
                         saveHero2Stats(hero);
                         Glide.with(getContext()).load(hero.getImageURL()).transform(new RoundedCornersTransformation(10, 5)).override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).into(ivHero2);
