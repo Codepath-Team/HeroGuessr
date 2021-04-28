@@ -29,7 +29,7 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
  - [x] As a user, I should be able to play a guessing game based on random matchups.
  - [x] As a user, I should be able to compare heroes' power stats and see who is likely to win in a given matchup.
  - [ ] As a user, I should be able to view my game statistics (% guessed correctly, hero I'm most likely to underrate, etc.)
- - [ ] As a user, I should be able to change my profile picture.
+ - [x] As a user, I should be able to change my profile picture.
  - [ ] As a user, I should be able to view a leaderboard (% guessed correctly, >50? total guesses)
 
 **Optional Nice-to-have Stories**
@@ -57,6 +57,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 <img src='https://i.imgur.com/8RJl3DV.gif' title='Login Authentication Walkthrough' width='500px' alt='Hero Search Walkthrough' />
 
 <img src='https://user-images.githubusercontent.com/65434552/114958012-27e6fb80-9e30-11eb-8e15-1f73a1c83f67.gif' title='Battle Game' width='500px' alt='Battle Game Walkthrough' />
+
+<img src='https://user-images.githubusercontent.com/65434552/116330571-cdd52700-a79b-11eb-9a7c-c373e5098650.gif' title='Profile Pic Walkthrough' width='500px' alt='Profile Pic Walkthrough' />
 
 ### 3. Navigation
 
