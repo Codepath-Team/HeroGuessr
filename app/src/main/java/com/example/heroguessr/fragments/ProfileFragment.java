@@ -1,10 +1,13 @@
 package com.example.heroguessr.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ImageDecoder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -31,8 +34,10 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
+import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
+import static com.parse.Parse.getApplicationContext;
 
 public class ProfileFragment extends Fragment {
 
@@ -44,6 +49,7 @@ public class ProfileFragment extends Fragment {
     private ImageView imProfilePicture;
     private File photoFile;
     ParseUser user = ParseUser.getCurrentUser();
+    public final static int PICK_PHOTO_CODE = 1046;
 
     public ProfileFragment() {
     }
@@ -97,8 +103,10 @@ public class ProfileFragment extends Fragment {
         btnChangePfp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(openGalleryIntent, 1000);
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, PICK_PHOTO_CODE);
+
             }
         });
 
@@ -113,11 +121,42 @@ public class ProfileFragment extends Fragment {
         });
 
     }
+    public Bitmap loadFromUri(Uri photoUri) {
+        Bitmap image = null;
+        try {
+            if(Build.VERSION.SDK_INT > 27){
+                ImageDecoder.Source source = ImageDecoder.createSource(getActivity().getApplicationContext().getContentResolver(), photoUri);
+                image = ImageDecoder.decodeBitmap(source);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        if (requestCode == PICK_PHOTO_CODE) {
+            if (resultCode == RESULT_OK) {
+                Uri photoUri = data.getData();
+                Bitmap selectedImage = loadFromUri(photoUri);
+                imProfilePicture.setImageBitmap(selectedImage);
+                File file = new File(photoUri.getPath());
+                user.put("image", new ParseFile(file));
+                user.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e!=null) {
+                            Log.e(TAG, "Error while saving", e);
+                            Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
+                        }
+                        Log.i(TAG, "Image save was successful!");
+                        Toast.makeText(getContext(), "Image saved successfully!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
@@ -132,6 +171,7 @@ public class ProfileFragment extends Fragment {
                                 Log.e(TAG, "Error while saving", e);
                                 Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
                             }
+
                             Log.i(TAG, "Image save was successful!");
                             Toast.makeText(getContext(), "Image saved successfully!", Toast.LENGTH_SHORT).show();
                         }
