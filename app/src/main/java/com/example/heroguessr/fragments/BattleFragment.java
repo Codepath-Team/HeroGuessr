@@ -19,6 +19,7 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.heroguessr.R;
 import com.example.heroguessr.models.Hero;
+import com.parse.ParseUser;
 
 import org.json.JSONException;
 

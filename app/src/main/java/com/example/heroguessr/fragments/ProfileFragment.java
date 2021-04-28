@@ -21,9 +21,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.core.content.FileProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.heroguessr.LoginActivity;
 import com.example.heroguessr.R;
+import com.example.heroguessr.models.User;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.io.File;
 
@@ -38,6 +43,7 @@ public class ProfileFragment extends Fragment {
     private Button btnChangePfp, btnCapture;
     private ImageView imProfilePicture;
     private File photoFile;
+    ParseUser user = ParseUser.getCurrentUser();
 
     public ProfileFragment() {
     }
@@ -78,7 +84,15 @@ public class ProfileFragment extends Fragment {
         btnChangePfp = view.findViewById(R.id.btnChangePfp);
         imProfilePicture = view.findViewById(R.id.imProfilePicture);
         int imageResource = getResources().getIdentifier("@drawable/pfp", null, getContext().getPackageName());
-        imProfilePicture.setImageResource(imageResource);
+
+        if (user.getParseFile("image")!=null) {
+            ParseFile image = user.getParseFile("image");
+            Glide.with(getContext()).load(image.getUrl()).into(imProfilePicture);
+        }
+        else {
+            imProfilePicture.setImageResource(imageResource);
+        }
+
 
         btnChangePfp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,17 +117,26 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000) {
-            if (resultCode == RESULT_OK) {
-                Uri imageUri = data.getData();
-                imProfilePicture.setImageURI(imageUri);
-            }
-        }
 
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 imProfilePicture.setImageBitmap(takenImage);
+
+                if (resultCode == RESULT_OK) {
+                    user.put("image", new ParseFile(photoFile));
+                    user.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e!=null) {
+                                Log.e(TAG, "Error while saving", e);
+                                Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
+                            }
+                            Log.i(TAG, "Image save was successful!");
+                            Toast.makeText(getContext(), "Image saved successfully!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             } else {
                 Toast.makeText(getContext(), "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
@@ -138,7 +161,7 @@ public class ProfileFragment extends Fragment {
     private void onLaunchCamera(View v) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         photoFile = getPhotoFileUri(photoFileName);
-        Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider.heroguessr", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
         if (intent.resolveActivity(getContext().getPackageManager()) != null) {

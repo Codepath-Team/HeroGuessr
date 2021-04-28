@@ -5,9 +5,8 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-public class User {
-    @ParseClassName("Post")
-    public class Post extends ParseObject {
+    @ParseClassName("User")
+    public class User extends ParseObject {
 
         public static final String KEY_USER = "user";
         public static final String KEY_IMAGE = "image";
@@ -28,4 +27,4 @@ public class User {
             put(KEY_USER, user);
         }
     }
-}
+
