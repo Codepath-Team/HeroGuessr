@@ -33,6 +33,7 @@ import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -142,17 +143,25 @@ public class ProfileFragment extends Fragment {
                 Uri photoUri = data.getData();
                 Bitmap selectedImage = loadFromUri(photoUri);
                 imProfilePicture.setImageBitmap(selectedImage);
-                File file = new File(photoUri.getPath());
-                user.put("image", new ParseFile(file));
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                selectedImage.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+                byte[] scaledData = bos.toByteArray();
+
+                ParseFile photoFile = new ParseFile("image_to_be_saved.jpg", scaledData);
+                user.put("image", photoFile);
                 user.saveInBackground(new SaveCallback() {
-                    @Override
+
                     public void done(ParseException e) {
-                        if (e!=null) {
-                            Log.e(TAG, "Error while saving", e);
-                            Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
+                        if (e != null) {
+                            Toast.makeText(getActivity(),
+                                    "Error saving: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                            Log.e(TAG, "Error", e);
+                        } else {
+                            Toast.makeText(getActivity(),
+                                    "Profile picture saved successfully",
+                                    Toast.LENGTH_LONG).show();
                         }
-                        Log.i(TAG, "Image save was successful!");
-                        Toast.makeText(getContext(), "Image saved successfully!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -172,8 +181,8 @@ public class ProfileFragment extends Fragment {
                                 Toast.makeText(getContext(), "Error while saving!", Toast.LENGTH_SHORT).show();
                             }
 
-                            Log.i(TAG, "Image save was successful!");
-                            Toast.makeText(getContext(), "Image saved successfully!", Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "Profile picture saved successfully");
+                            Toast.makeText(getContext(), "Profile picture saved successfully", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
