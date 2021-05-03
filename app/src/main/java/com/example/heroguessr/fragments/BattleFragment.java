@@ -19,7 +19,9 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.heroguessr.R;
 import com.example.heroguessr.models.Hero;
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import org.json.JSONException;
 
@@ -161,21 +163,56 @@ public class BattleFragment extends Fragment {
         int hero1Overall = intel1 + str1 + spd1 + dur1 + pwr1 + cbt1;
         int hero2Overall = intel2 + str2 + spd2 + dur2 + pwr2 + cbt2;
 
+
         if (hero1Overall > hero2Overall) {
             tvWinner.setText("Winner is " + hero1Name);
             if (winner == 1) {
                 tvStatus.setText("You were CORRECT");
+                addWin();
             } else {
                 tvStatus.setText("You were INCORRECT");
+                addLoss();
             }
         } else {
             tvWinner.setText("Winner is " + hero2Name);
             if (winner == 2) {
                 tvStatus.setText("You were CORRECT");
+                addWin();
             } else {
                 tvStatus.setText("You were INCORRECT");
+                addLoss();
             }
         }
+    }
+
+    private void addWin() {
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser.increment("Wins");
+        currentUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.i(TAG, "Successfully saved win");
+                } else {
+                    Log.e(TAG, "Failed to save win" + e);
+                }
+            }
+        });
+    }
+
+    private void addLoss() {
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        currentUser.increment("Losses");
+        currentUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.i(TAG, "Successfully saved loss");
+                } else {
+                    Log.e(TAG, "Failed to save loss" + e);
+                }
+            }
+        });
     }
 
     public void saveHero1Stats(Hero hero) {
