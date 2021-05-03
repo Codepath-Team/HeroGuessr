@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".fragments.ProfileFragment">
 
+    <TextView
+        android:id="@+id/tv_losses"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="505dp"
+        android:text="Losses"
+        android:textSize="25sp" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="133dp"
@@ -15,7 +25,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="top|right"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="22dp"
         android:text="Logout" />
 
@@ -53,27 +63,45 @@
         android:textSize="10sp" />
 
     <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="237dp"
-        android:layout_height="80dp"
+        android:id="@+id/tv_wins"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="331dp"
-        android:text="Win/Loss:"
-        android:textSize="45sp" />
+        android:layout_marginTop="325dp"
+        android:text="Wins"
+        android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/tvStats"
-        android:layout_width="161dp"
+        android:id="@+id/tv_username"
+        android:layout_width="145dp"
+        android:layout_height="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:layout_toEndOf="@+id/imProfilePicture"
+        android:text="TextView"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="269dp"
+        android:text="Wins:"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_below="@+id/tvTitle"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="115dp"
-        android:text="W: 13 L: 5"
-        android:textSize="35sp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="74dp"
+        android:text="Losses:"
+        android:textSize="25sp" />
 
 </RelativeLayout>

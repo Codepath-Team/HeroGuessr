@@ -1,7 +1,5 @@
 package com.example.heroguessr.fragments;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,7 +26,6 @@ import androidx.core.content.FileProvider;
 import com.bumptech.glide.Glide;
 import com.example.heroguessr.LoginActivity;
 import com.example.heroguessr.R;
-import com.example.heroguessr.models.User;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -38,7 +36,6 @@ import java.io.File;
 import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
-import static com.parse.Parse.getApplicationContext;
 
 public class ProfileFragment extends Fragment {
 
@@ -49,6 +46,9 @@ public class ProfileFragment extends Fragment {
     private Button btnChangePfp, btnCapture;
     private ImageView imProfilePicture;
     private File photoFile;
+    private TextView tv_username;
+    private TextView tv_wins;
+    private TextView tv_losses;
     ParseUser user = ParseUser.getCurrentUser();
     public final static int PICK_PHOTO_CODE = 1046;
 
@@ -90,6 +90,17 @@ public class ProfileFragment extends Fragment {
 
         btnChangePfp = view.findViewById(R.id.btnChangePfp);
         imProfilePicture = view.findViewById(R.id.imProfilePicture);
+        tv_username = view.findViewById(R.id.tv_username);
+        tv_wins = view.findViewById(R.id.tv_wins);
+        tv_losses = view.findViewById(R.id.tv_losses);
+        tv_username.setText(user.getUsername());
+        int numOfWins = user.getInt("Wins");
+        String wins = String.valueOf(numOfWins);
+        tv_wins.setText(wins);
+        int numOfLosses = user.getInt("Losses");
+        String losses = String.valueOf(numOfLosses);
+        tv_losses.setText(losses);
+
         int imageResource = getResources().getIdentifier("@drawable/pfp", null, getContext().getPackageName());
 
         if (user.getParseFile("image")!=null) {
