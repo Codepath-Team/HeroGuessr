@@ -147,6 +147,27 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {
+            int numOfWins = user.getInt("Wins");
+            String wins = String.valueOf(numOfWins);
+            tv_wins.setText(wins);
+            int numOfLosses = user.getInt("Losses");
+            String losses = String.valueOf(numOfLosses);
+            tv_losses.setText(losses);
+        }
+        else {
+            int numOfWins = user.getInt("Wins");
+            String wins = String.valueOf(numOfWins);
+            tv_wins.setText(wins);
+            int numOfLosses = user.getInt("Losses");
+            String losses = String.valueOf(numOfLosses);
+            tv_losses.setText(losses);
+        }
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_PHOTO_CODE) {
