@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.heroguessr.R;
 import com.example.heroguessr.adapters.PlayersAdapter;
@@ -29,6 +30,7 @@ public class LeaderboardFragment extends Fragment {
     private RecyclerView rvLeaderboards;
     protected PlayersAdapter adapter;
     protected List<ParseUser> allUsers;
+    private SwipeRefreshLayout swipeContainer;
 
 
     public LeaderboardFragment() {
@@ -51,6 +53,14 @@ public class LeaderboardFragment extends Fragment {
         rvLeaderboards.setAdapter(adapter);
         rvLeaderboards.setLayoutManager(new LinearLayoutManager(getContext()));
         queryUsers();
+
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                queryUsers();
+            }
+        });
     }
 
     protected void queryUsers() {
@@ -71,6 +81,7 @@ public class LeaderboardFragment extends Fragment {
                 allUsers.clear();
                 allUsers.addAll(users);
                 adapter.notifyDataSetChanged();
+                swipeContainer.setRefreshing(false);
             }
         });
     }
