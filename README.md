@@ -58,6 +58,8 @@ HeroGuessr is an application that allows users to brush up on their superhero kn
 
 <img src='https://user-images.githubusercontent.com/65434552/114958012-27e6fb80-9e30-11eb-8e15-1f73a1c83f67.gif' title='Battle Game' width='500px' alt='Battle Game Walkthrough' />
 
+<img src= 'profileDemo.gif'/>
+
 <img src='https://user-images.githubusercontent.com/65434552/116330571-cdd52700-a79b-11eb-9a7c-c373e5098650.gif' title='Profile Pic Walkthrough' width='500px' alt='Profile Pic Walkthrough' />
 
 <img src='https://i.imgur.com/3jmq8qn.gif' title='Leaderboards Walkthrough' width='500px' alt='Leaderboards Walkthrough' />
